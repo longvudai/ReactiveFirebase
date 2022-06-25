@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "ReactiveFirebase",
-    platforms: [.iOS(.v14)],
+    platforms: [.iOS(.v14), .watchOS(.v7), .macOS(.v11)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -12,8 +12,8 @@ let package = Package(
             targets: ["ReactiveFirebaseDatabase"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/firebase/firebase-ios-sdk", from: "8.15.0"),
-        .package(url: "https://github.com/CombineCommunity/CombineExt", from: "1.5.1")
+        .package(url: "https://github.com/firebase/firebase-ios-sdk", from: "9.2.0"),
+        .package(url: "https://github.com/CombineCommunity/CombineExt", from: "1.6.1")
     ],
     targets: [
         .target(
