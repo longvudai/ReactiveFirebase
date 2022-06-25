@@ -32,6 +32,7 @@ public extension DatabaseQuery {
         case .latestValueFromServer:
             return AnyPublisher<DataSnapshot, Never> { subscriber -> Cancellable in
                 self.getData { _, snapshot in
+                    let snapshot = snapshot ?? DataSnapshot()
                     subscriber.send(snapshot)
                 }
                 return AnyCancellable {}
